@@ -1,0 +1,106 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color:#12bdad;
+    font-family: sans-serif;
+}
+main{
+    display: flex;
+    margin-top: 60px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+section{
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+/* X */
+.lines.x::before, .lines.x::after{
+    content: "";
+    transform: 95deg;
+    height: calc(60px * 0.15);
+    width: calc(100px * 0.9);
+    background-color: #525356;
+    position: absolute;
+    border-radius: 5px;
+}
+.lines.x::before{
+    transform: rotate(45deg);
+}
+
+.lines.x::after{
+    transform: rotate(-45deg);
+}
+/* Circle */
+.lines.circle::before{
+    content: "";
+    height: calc(80px * 0.9);
+    width: calc(80px * 0.9);
+    background-color: #efe9d6;
+    position: absolute;
+    border-radius: 50%;
+}
+.lines.circle::after{
+    content: "";
+    height: calc(65px * 0.9);
+    width: calc(65px * 0.9);
+    background-color:#12bdad;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+}
+.lines{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #0a9b8c;
+    position: relative;
+    cursor: pointer;
+}
+.lines:nth-child(-n + 3){
+    border-top: none;
+}
+.lines:nth-child(3n + 1){
+    border-left: none;
+}
+.lines:nth-child(3n){
+    border-right: none;
+}
+.lines:nth-child(n + 7){
+    border-bottom: none;
+}
+/*Message*/
+.message{
+    display: none;
+    position: absolute;
+    z-index: 2;
+    width: 200px;
+    border-radius: 3px;
+    margin-top: 30px;
+    text-align: center;
+    background-color: #efe9d6;
+    color: #525356;
+    padding: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.message p{
+    margin-bottom: 10px;
+}
+.message button{
+    cursor: pointer;
+    padding: 5px;
+    background-color: white;
+    border: none;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.message button:active{
+    box-shadow: rgba(0, 0, 0, 0.4) 1.95px 1.95px 2.6px;
+}
